@@ -1,0 +1,6 @@
+__pycache__/
+sensors/__pycache__/
+tester.py
+databases/*
+!databases/.gitkeep
+logs

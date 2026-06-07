@@ -1,0 +1,111 @@
+html {
+    min-height: 100%;
+    user-select: none;
+    font-family: Tahoma;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(to bottom, rgb(92, 180, 247), rgb(38, 127, 216));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: aliceblue;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+.line {
+    border: none;
+    height: 1px;
+    background-color: aliceblue;
+    margin: 0;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .nav ul {
+        flex-direction: column;
+        gap: 0.75em
+    }
+}
+
+.nav ul li button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.nav ul li button:hover {
+    color: rgb(204, 214, 222)
+}
+
+.sequence-container-outer {
+    background-color: rgb(95, 170, 228);
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    max-width: 95%;
+    overflow-x: hidden;
+    margin: auto;
+}
+
+.sequence-container-inner {
+    overflow-x: auto;
+    align-items: center;
+    display: flex;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(174, 220, 255) transparent;
+}
+
+.sequence-container-inner::-webkit-scrollbar {
+    height: 10px;
+}
+
+.sequence-container-inner::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.sequence-container-inner::-webkit-scrollbar-thumb {
+    background: rgb(135, 203, 255);
+    border-radius: 10px;
+}
+
+.sequence-element {
+    margin: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.value-display-top {
+    margin-bottom: 0;
+}
+
+.value-display-bottom {
+    margin-top: 0;
+    font-size: 0.75em;
+}
+
+.centered-list {
+    display: table;
+    margin: 0 auto;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wetterstation</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/icon.ico')}}">
+    </head>
+
+    <body>
+        <header>
+            <div class="heading">
+                <img src="{{url_for('static', filename='images/icon.ico')}}" alt="Logo" height="100px" style="pointer-events: none;">
+                <h1 id="city"></h1>
+            </div>
+
+            <br>
+
+            <hr class="line">
+            
+            <nav class="nav">
+                <ul>
+                    <li><button onclick="scrollToElement('daily_origin')">AKTUELL</button></li>
+                    <li><button onclick="scrollToElement('past_twelve_hours')">LETZTE 12 STUNDEN</button></li>
+                    <li><button onclick="scrollToElement('past_seven_days')">LETZTE 7 TAGE</button></li>
+                    <li><button onclick="scrollToElement('technical_data')">TECHNISCHE DATEN</button></li>
+                </ul>
+            </nav>
+
+            <hr class="line">
+        </header>
+
+        <main>
+            <!-- Anzeige der aktuellsten Daten -->
+            <div>
+                <p id="daily_origin" style="text-align: center;">0000-00-00 - 00:00</p>
+                <h1 id="daily_temperature" style="text-align: center; font-size: 3.75em; margin: 0;">--°C</h1>
+                <p id="min_max_temperature" style="text-align: center; font-size: 1em; margin: 0;">--°C / --°C</p>
+                <br>
+                <h1 id="daily_humidity" style="text-align: center; font-size: 3.75em; margin: 0;">--%</h1>
+                <p id="min_max_humidity" style="text-align: center; font-size: 1em; margin: 0;">--% / --%</p>
+                <br>
+                <h1 id="daily_pressure" style="text-align: center; font-size: 3.75em; margin: 0;">-- hPa</h1>
+                <p id="min_max_pressure" style="text-align: center; font-size: 1em; margin: 0;">-- hPa / -- hPa</p>
+                <br>
+            </div>
+
+            <hr class="line">
+
+            <!-- Daten der letzten zwölf Stunden -->
+             <div>
+                <p id="past_twelve_hours" style="text-align: center;"><b>Letzte 12 Stunden</b></p>
+                <div class="sequence-container-outer"><div id="past_hours" class="sequence-container-inner"></div></div>
+                <br>
+             </div>
+
+             <hr class="line">
+
+             <!-- Daten der letzten sieben Tage -->
+              <div>
+                <p id="past_seven_days" style="text-align: center;"><b>Letzte 7 Tage</b></p>
+                <div class="sequence-container-outer"><div id="past_days" class="sequence-container-inner"></div></div>
+                <br>
+              </div>
+
+              <hr class="line">
+
+              <!-- Raspberry Pi Informationen -->
+               <div>
+                <p id="technical_data" style="text-align: center;"><b>Technische Daten</b></p>
+                <ul class="centered-list">
+                    <li id="cpu_info" style="margin: 5px">CPU - Temperatur / Last / Takt: --°C / --% / -- Mhz</li>
+                    <li id="ram_info" style="margin: 5px">RAM - Benutzt / Frei: -- GB / -- GB</li>
+                    <li id="disk_info" style="margin: 5px">Festplatte - Benutzt / Frei: -- GB / -- GB</li>
+                    <li id="uptime_info" style="margin: 5px">Laufzeit: --</li>
+                </ul>
+               </div>
+        </main>
+
+        <script src="{{url_for('static', filename='app.js')}}"></script>
+    </body>
+</html>
